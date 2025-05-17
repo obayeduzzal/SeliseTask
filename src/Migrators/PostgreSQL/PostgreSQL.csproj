@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>TTM.Migrators.PostgreSQL</RootNamespace>
+    <AssemblyName>TTM.Migrators.PostgreSQL</AssemblyName>
+    <NoWarn>RCS1021;IDE0161;RCS1205</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Update="Roslynator.Analyzers" Version="4.13.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+global using System;
+global using System.Threading.Tasks;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;
+global using NSwag.Annotations;
+global using TTM.Core.Infrastructure;
+global using TTM.Core.Infrastructure.Auth.Permissions;
+global using TTM.Core.Shared.Authorization;
+global using TTM.Core.Shared.DTOs;
+global using TTM.Core.Shared.Helpers;

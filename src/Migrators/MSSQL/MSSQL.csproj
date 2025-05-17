@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <RootNamespace>AIT.DotNetCore.Boilerplate.Migrators.MSSQL</RootNamespace>
+        <AssemblyName>AIT.DotNetCore.Boilerplate.Migrators.MSSQL</AssemblyName>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Update="Roslynator.Analyzers" Version="4.13.0" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\Core\Infrastructure\Infrastructure.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Migrations\" />
+    </ItemGroup>
+</Project>

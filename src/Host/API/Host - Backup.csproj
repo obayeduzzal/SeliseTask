@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>AIT.DotNetCore.Boilerplate.Host</RootNamespace>
+    <AssemblyName>AIT.DotNetCore.Boilerplate.Host</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'AIT.DotNetCore.Boilerplate.Api.Development' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'AIT.DotNetCore.Boilerplate.Api.Staging' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'AIT.DotNetCore.Boilerplate.Api.Production' " />
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="Hangfire.Console.Extensions.Serilog" Version="2.0.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+    <ItemGroup>
+        <None Include="Templates\Emails\*.cshtml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Templates\SMS\*.cshtml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Remove="Templates\Emails\enable-2fa-with-otp.cshtml" />
+    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Application\Application.csproj" />
+    <ProjectReference Include="..\..\Core\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Migrators\Migrators.PostgreSQL\Migrators.PostgreSQL.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Roslynator.Analyzers" Version="4.12.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>
